@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:KinderrApp"
+             x:Class="KinderrApp.MainPage">
+
+    <ContentPage.BindingContext>
+        <local:KindergartennViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
+    
+    <StackLayout Background="White">
+        <ListView ItemsSource="{Binding ItemList}"
+                  HasUnevenRows="True"
+                  SeparatorColor="Blue"
+                  SeparatorVisibility="None"
+                  IsPullToRefreshEnabled="True"
+                  RefreshControlColor="PowderBlue">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Favorite"/>
+                            <MenuItem Text="Delete"/>
+                        </ViewCell.ContextActions>
+                        <Grid Padding="10">
+                            <Frame CornerRadius="10" HasShadow="True">
+                                <StackLayout Orientation="Horizontal">
+                                    <Image Source="{Binding ImageUrl}" WidthRequest="100" HeightRequest="100"/>
+                                    <StackLayout>
+                                        <Label Text="{Binding Surname}" 
+                                           FontSize="Large"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label Text="{Binding Year}"
+                                           FontSize="Medium"/>
+                                            <Label Text="{Binding Mouth}"
+                                               FontSize="Medium"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Header>
+                <StackLayout>
+                    <Label Margin="30,0,0,0"
+                           Text="Данные детского сада"
+                           FontSize="Large"
+                           TextColor="PowderBlue"/>
+                </StackLayout>
+            </ListView.Header>
+            <ListView.Footer>
+                <StackLayout>
+                    <Label Margin="30,0,0,0"
+                           Text="Загрузить больше данных"
+                           FontSize="Large"
+                           TextColor="PowderBlue"/>
+                </StackLayout>
+            </ListView.Footer>
+        </ListView>
+    </StackLayout>
+
+</ContentPage>
