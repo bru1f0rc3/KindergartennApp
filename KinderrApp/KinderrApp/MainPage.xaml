@@ -28,7 +28,12 @@
                         <Grid Padding="10">
                             <Frame CornerRadius="10" HasShadow="True">
                                 <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding ImageUrl}" WidthRequest="100" HeightRequest="100"/>
+                                    <Image Source="{Binding ImageUrl}" WidthRequest="100" HeightRequest="100">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
+                                                                  CommandParameter="{Binding IdPeople}"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
                                     <StackLayout>
                                         <Label Text="{Binding Surname}" 
                                            FontSize="Large"/>

@@ -10,9 +10,9 @@
     
     <ContentPage.Content>
         <StackLayout>
-            <Entry Placeholder="Напишите Фамилию" Text="{Binding kinder.Surname}"/>
-            <Entry Placeholder="Напишите Год рождения" Text="{Binding kinder.Year}"/>
-            <Entry Placeholder="Напишите Месяц" Text="{Binding kinder.Mouth}"/>
+            <Entry Placeholder="Напишите Фамилию" Text="{Binding Kinder.Surname}"/>
+            <Entry Placeholder="Напишите Год рождения" Text="{Binding Kinder.Year}"/>
+            <Entry Placeholder="Напишите Месяц" Text="{Binding Kinder.Mouth}"/>
             <Button Text="Добавить"
                     Clicked="Button_Clicked"/>
         </StackLayout>
