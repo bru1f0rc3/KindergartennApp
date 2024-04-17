@@ -28,7 +28,7 @@
                         <Grid Padding="10">
                             <Frame CornerRadius="10" HasShadow="True">
                                 <StackLayout Orientation="Horizontal">
-                                    <Image Source="{Binding ImageUrl}" WidthRequest="100" HeightRequest="100">
+                                    <Image Source="{Binding ImageUrl}" WidthRequest="100" HeightRequest="50">
                                         <Image.GestureRecognizers>
                                             <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"
                                                                   CommandParameter="{Binding IdPeople}"/>
@@ -43,6 +43,14 @@
                                             <Label Text="{Binding Mouth}"
                                                FontSize="Medium"/>
                                         </StackLayout>
+                                    </StackLayout>
+                                    <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                                        <Image Source="{Binding ImageUrl}" WidthRequest="30" HeightRequest="30">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"
+                                                                      CommandParameter="{Binding IdPeople}"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
                                     </StackLayout>
                                 </StackLayout>
                             </Frame>

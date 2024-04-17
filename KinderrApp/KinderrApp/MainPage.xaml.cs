@@ -28,5 +28,14 @@ namespace KinderrApp
 
             Navigation.PushAsync(new AddKindergartennPage(kinder));
         }
+
+        private void TapGestureRecognizer_Tapped_1(object sender, EventArgs e)
+        {
+            TappedEventArgs tappedEventArgs = (TappedEventArgs)e;
+            Kindergartenn kinder = ((KindergartennViewModel)BindingContext).ItemList.
+                Where(prod => prod.IdPeople == (int)tappedEventArgs.Parameter).FirstOrDefault();
+            ((KindergartennViewModel) BindingContext).ItemList.Remove(kinder);
+        }
+
     }
 }

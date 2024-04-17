@@ -30,9 +30,13 @@ namespace KinderrApp
                 }
                 else
                 {
-                    Kindergartenn temp = ItemList.Where(kinders => kinders.IdPeople == kinder.IdPeople).FirstOrDefault();
-                    ItemList.Remove(temp);
+                    Kindergartenn kinderss = ItemList.Where(prod => prod.IdPeople == kinder.IdPeople).FirstOrDefault();
+                    int newIndex = ItemList.IndexOf(kinderss);
+                    ItemList.Remove(kinderss);
                     ItemList.Add(kinder);
+
+                    int oldIndex = ItemList.IndexOf(kinder);
+                    ItemList.Move(oldIndex, newIndex);
                 }
             });
         } 
